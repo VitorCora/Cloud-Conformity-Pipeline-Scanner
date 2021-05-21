@@ -4,6 +4,11 @@ Resources:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: demo-bucket
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
       LoggingConfiguration:
         DestinationBucketName: demo-log-bucket
         LogFilePrefix: demo
