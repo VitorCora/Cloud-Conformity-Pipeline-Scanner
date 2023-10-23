@@ -10,9 +10,9 @@ logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 OUTPUT_FILE = "findings.json"
 
 CC_REGIONS = [
-    "eu-west-1",
-    "ap-southeast-2",
-    "us-west-2",
+    "us-1",
+    "trend-us-1",
+    "eu-1",
 ]
 
 RISK_LEVEL_NUMS = {
@@ -82,7 +82,7 @@ class CcValidator:
         return payload
 
     def run_validation(self, payload):
-        cfn_scan_endpoint = f"https://{self.cc_region}-api.cloudconformity.com/v1/iac-scanning/scan"
+        cfn_scan_endpoint = f"https://conformity.{self.cc_region}.cloudone.trendmicro.com/api/template-scanner/scan"
 
         json_output = json.dumps(payload, indent=4, sort_keys=True)
         logging.debug(f"Sending the following request:\n{json_output}")
