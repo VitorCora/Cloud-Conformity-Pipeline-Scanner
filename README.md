@@ -93,3 +93,20 @@ pytest --cov=code --cov-report term-missing
 
 * Blog: [oznetnerd.com](https://oznetnerd.com)
 * Email: will@oznetnerd.com
+
+
+Updates 23/10/2023 - Vitor Corá
+
+Updated the EndPoint to reflect the new API Endpoint:
+https://conformity.{region}.cloudone.trendmicro.com/api/template-scanner/scan
+
+Old endpoint wasn`t working for new API Keys
+https://us-west-2-api.cloudconformity.com/v1/iac-scanning/scan
+
+--region in this case represents your Cloud One region
+
+-- template is enabled to accept the following regions:
+
+-- -- trend-us-1
+-- -- us-1
+-- -- eu-1
